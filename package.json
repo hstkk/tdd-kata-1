@@ -1,0 +1,27 @@
+{
+  "name": "tdd-kata-1",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc --project .",
+    "clean": "rm -rf dist",
+    "fix": "yarn run lint --fix",
+    "lint": "tslint --project .",
+    "pretest": "yarn run lint",
+    "prebuild": "yarn run clean && yarn test --runInBand",
+    "test": "jest --coverage",
+    "watch": "yarn test --watch"
+  },
+  "author": "Sami Hostikka <hostikka@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "@types/jest": "^21.1.6",
+    "jest": "^21.2.1",
+    "ts-jest": "^21.2.2",
+    "tslint": "^5.8.0",
+    "tslint-immutable": "^4.4.0",
+    "tslint-microsoft-contrib": "^5.0.1",
+    "typescript": "^2.6.1"
+  }
+}

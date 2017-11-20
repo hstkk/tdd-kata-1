@@ -1,0 +1,41 @@
+{
+  "extends": [
+    "tslint-microsoft-contrib",
+    "tslint-immutable"
+  ],
+  "rules": {
+    "no-var-keyword": true,
+    "no-parameter-reassignment": true,
+    "typedef": [
+      true,
+      "call-signature"
+    ],
+    "readonly-keyword": true,
+    "readonly-array": true,
+    "no-let": true,
+    "no-object-mutation": true,
+    "no-mixed-interface": true,
+    "no-expression-statement": [
+      true,
+      {
+        "ignore-prefix": [
+          "afterAll",
+          "afterEach",
+          "beforeAll",
+          "beforeEach",
+          "describe",
+          "expect",
+          "it",
+          "require.requireActual",
+          "require.requireMock",
+          "test"
+        ]
+      }
+    ],
+    "missing-jsdoc": false,
+    "export-name": false,
+    "no-http-string": false,
+    "import-name": false,
+    "interface-name": [true, "never-prefix"]
+  }
+}

@@ -1,0 +1,21 @@
+# Logs
+logs
+*.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# Dependencies
+node_modules
+
+# Etc
+.*
+dist
+coverage
+
+# Whitelist
+!.gitignore
+!.travis.yml
+!.npmignore
