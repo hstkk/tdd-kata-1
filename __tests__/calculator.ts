@@ -28,4 +28,13 @@ describe('Calculator', () => {
     it('should return 3 for "//;\\n1;2"', () => {
         expect(add('//;\n1;2')).toBe(3);
     });
+
+    it('should throw exception "negatives not allowed -1"', () => {
+        expect(add('-1')).toThrowError('negatives not allowed -1');
+    });
+
+    it('should throw exception "negatives not allowed -1, -2"', () => {
+        expect(add('-1;-2')).toThrowError('negatives not allowed -1, -2');
+    });
+
 });
