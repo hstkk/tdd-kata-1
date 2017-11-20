@@ -12,4 +12,8 @@ describe('Calculator', () => {
     it('should return 3 for "1,2"', () => {
         expect(add('1,2')).toBe(3);
     });
+
+    it('should handle unknown amount of numbers', () => {
+        expect(add('1,2,3,4,5')).toBe(15);
+    });
 });
