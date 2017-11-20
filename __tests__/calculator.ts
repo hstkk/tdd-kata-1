@@ -20,4 +20,8 @@ describe('Calculator', () => {
     it('should return 6 for “1\\n2,3”', () => {
         expect(add('1\n2,3')).toBe(6);
     });
+
+    it('should return 1 for "1,\\n"', () => {
+        expect(add('1,\n')).toBe(1);
+    });
 });
