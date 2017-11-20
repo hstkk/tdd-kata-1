@@ -1,14 +1,14 @@
 import { Error } from 'tslint/lib/error';
 export function add(str: string): number {
-    const numbers: ReadonlyArray<number> = split(str).map(numberify);
+    const numbers: ReadonlyArray<number> = numberify(split(str));
     // tslint:disable-next-line:no-expression-statement
     validate(numbers);
 
-    return numbers.reduce(sum);
+    return sum(numbers);
 }
 
-function numberify(str: string): number {
-    return +str;
+function numberify(strings: ReadonlyArray<string>): ReadonlyArray<number> {
+    return strings.map(str => +str);
 }
 
 function split(str: string): ReadonlyArray<string> {
@@ -19,8 +19,8 @@ function split(str: string): ReadonlyArray<string> {
     return numbers.split(separator);
 }
 
-function sum(a: number, b: number): number {
-    return a + b;
+function sum(numbers: ReadonlyArray<number>): number {
+    return numbers.reduce((a, b) => a + b);
 }
 
 function validate(numbers: ReadonlyArray<number>): void {
