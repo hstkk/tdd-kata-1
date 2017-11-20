@@ -24,4 +24,8 @@ describe('Calculator', () => {
     it('should return 1 for "1,\\n"', () => {
         expect(add('1,\n')).toBe(1);
     });
+
+    it('should return 3 for "//;\\n1;2"', () => {
+        expect(add('//;\n1;2')).toBe(3);
+    });
 });
