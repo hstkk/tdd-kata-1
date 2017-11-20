@@ -17,7 +17,7 @@ describe('Calculator', () => {
         expect(add('1,2,3,4,5')).toBe(15);
     });
 
-    it('should return 6 for “1\n2,3”', () => {
+    it('should return 6 for “1\\n2,3”', () => {
         expect(add('1\n2,3')).toBe(6);
     });
 });

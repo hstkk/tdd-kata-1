@@ -1,4 +1,4 @@
-const SEPARATOR = ',';
+const SEPARATOR: RegExp = /,|\n/;
 
 export function add(str: string): number {
     return str
