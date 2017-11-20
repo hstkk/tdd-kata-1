@@ -1,4 +1,3 @@
-import { Error } from 'tslint/lib/error';
 export function add(str: string): number {
     const numbers: ReadonlyArray<number> = numberify(split(str));
     // tslint:disable-next-line:no-expression-statement
