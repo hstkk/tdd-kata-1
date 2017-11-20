@@ -1,18 +1,19 @@
-const DEFAULT_SEPARATOR: RegExp = /,|\n/;
-
 export function add(str: string): number {
-    const matches = str.match(/\/\/([^']+)\n([^']+)/);
-    const separator = matches && matches[1] || DEFAULT_SEPARATOR;
-    const numbers = matches && matches[2] || str;
-
-    return numbers
-        .split(separator)
+    return split(str)
         .map(numberify)
         .reduce(sum);
 }
 
 function numberify(str: string): number {
     return +str;
+}
+
+function split(str: string): ReadonlyArray<string> {
+    const [numbers, separator] = (
+        str.match(/\/\/([^']+)\n([^']+)/) || [/,|\n/, str]
+    ).reverse();
+
+    return numbers.split(separator);
 }
 
 function sum(a: number, b: number): number {
