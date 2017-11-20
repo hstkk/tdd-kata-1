@@ -1,3 +1,7 @@
-export function add(): number {
-    return 0;
+export function add(numbers: string): number {
+    if (!numbers) {
+        return 0;
+    }
+
+    return -1;
 }
