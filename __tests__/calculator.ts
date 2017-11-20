@@ -30,11 +30,10 @@ describe('Calculator', () => {
     });
 
     it('should throw exception "negatives not allowed -1"', () => {
-        expect(add('-1')).toThrowError('negatives not allowed -1');
+        expect(() => add('-1')).toThrowError(/negatives not allowed -1/);
     });
 
     it('should throw exception "negatives not allowed -1, -2"', () => {
-        expect(add('-1;-2')).toThrowError('negatives not allowed -1, -2');
+        expect(() => add('-1,-2')).toThrowError(/negatives not allowed -1, -2/);
     });
-
 });

@@ -1,7 +1,13 @@
+import { Error } from 'tslint/lib/error';
 export function add(str: string): number {
-    return split(str)
-        .map(numberify)
-        .reduce(sum);
+    const numbers: ReadonlyArray<number> = split(str).map(numberify);
+    const negatives: ReadonlyArray<number> = numbers.filter(i => i < 0);
+
+    if (negatives.length > 0) {
+        throw new RangeError(`negatives not allowed ${negatives.join(', ')}`);
+    }
+
+    return numbers.reduce(sum);
 }
 
 function numberify(str: string): number {
