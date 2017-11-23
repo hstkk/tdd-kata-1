@@ -40,4 +40,8 @@ describe('Calculator', () => {
     it('should ignore big numbers, so 2 + 1001 = 2', () => {
         expect(add('2,1001')).toBe(2);
     });
+
+    it('should support varying length delimiters', () => {
+        expect(add('//[***]\n1***2***3')).toBe(6);
+    });
 });
