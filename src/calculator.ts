@@ -18,10 +18,8 @@ function numberify(str: string): number {
 }
 
 function split(str: string): ReadonlyArray<string> {
-    const matches = str.match(/\/\/([^']+)\n([^']+)/);
-    const hasMatches = null !== matches;
-    const separator = hasMatches ? matches[1] : /,|\n/;
-    const numbers = hasMatches ? matches[2] : str;
+    const regex = /\/\/\[?(.*?)\]?\n/;
+    const [numbers = str, separator = /,|\n/] = str.split(regex).reverse();
 
     return numbers.split(separator);
 }
